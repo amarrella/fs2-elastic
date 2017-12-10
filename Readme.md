@@ -2,7 +2,7 @@
 This library offers an interface to stream results to / from ElasticSearch.
 
 It provides a safe handling of the client and nice lightweight syntax to interact with the ElasticSearch high
-level api.
+level api. For this reason, the library supports only ElasticSearch 6.0+.
 
 ## Usage
 
