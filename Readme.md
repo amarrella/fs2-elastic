@@ -4,6 +4,14 @@ This library offers an interface to stream results to / from ElasticSearch.
 It provides a safe handling of the client and nice lightweight syntax to interact with the ElasticSearch high
 level api. For this reason, the library supports only ElasticSearch 6.0+.
 
+## Installation
+Add the following to your `build.sbt`:
+
+```
+resolvers += Resolver.sonatypeRepo("snapshots")
+libraryDependencies += "com.alessandromarrella" %% "fs2-elastic" % "0.0.1-SNAPSHOT"
+```
+
 ## Usage
 
 For the client, use:
