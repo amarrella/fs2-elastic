@@ -1,11 +1,14 @@
 # fs2-elastic
-This library offers an interface to stream results to / from ElasticSearch.
+This library offers an interface based on [fs2](https://github.com/functional-streams-for-scala/fs2)
+to stream results to / from ElasticSearch.
 
-It provides a safe handling of the client and nice lightweight syntax to interact with the ElasticSearch high
-level api.
+It provides a safe handling of the client and nice lightweight syntax to interact with the [ElasticSearch high
+level api](https://www.elastic.co/guide/en/elasticsearch/client/java-rest/6.0/java-rest-high-supported-apis.html).
 
 ## Compatibility
-The library is compatible with `ElasticSearch 6.x`, `fs2 0.10.x` and `scala 2.12.x`
+The library is compatible with `ElasticSearch 6.x`, `fs2 0.10.x` and `scala 2.12.x`.
+
+The library can be used in conjuntion with the [elastic4s dsl](https://github.com/sksamuel/elastic4s) to create queries.
 
 ## Installation
 Add the following to your `build.sbt`:
