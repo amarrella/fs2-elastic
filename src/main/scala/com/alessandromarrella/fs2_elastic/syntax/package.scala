@@ -12,12 +12,15 @@ package object syntax {
 
   private[syntax] type IteratorResultMaybe[A] = Option[(A, Iterator[A])]
 
-  private[syntax] def streamFromJavaIterable[F[_], A](inputStream: Stream[F, java.lang.Iterable[A]])(implicit F: Async[F]): Stream[F, A] =
+  private[syntax] def streamFromJavaIterable[F[_], A](
+      inputStream: Stream[F, java.lang.Iterable[A]])(
+      implicit F: Async[F]): Stream[F, A] =
     streamFromIterable(inputStream.map(_.asScala))
 
-  private[syntax] def streamFromIterable[F[_], A](inputStream: Stream[F, Iterable[A]])(implicit F: Async[F]): Stream[F, A] =
-    inputStream.flatMap(a => Stream.unfoldEval(a.iterator){
-      i =>
+  private[syntax] def streamFromIterable[F[_], A](
+      inputStream: Stream[F, Iterable[A]])(implicit F: Async[F]): Stream[F, A] =
+    inputStream.flatMap(a =>
+      Stream.unfoldEval(a.iterator) { i =>
         if (i.hasNext) F.delay[IteratorResultMaybe[A]](Some((i.next(), i)))
         else F.delay[IteratorResultMaybe[A]](Option.empty)
     })
