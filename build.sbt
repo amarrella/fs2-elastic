@@ -16,3 +16,10 @@ lazy val root = (project in file("."))
       "org.elasticsearch.client" % "elasticsearch-rest-high-level-client" % elasticVersion
     )
   )
+
+homepage in Global := Some(url("https://github.com/amarrella/fs2-elastic"))
+licenses in Global += "MIT" -> url("https://github.com/amarrella/fs2-mongodb/blob/master/LICENSE")
+developers in Global += Developer("amarrella",
+  "Alessandro Marrella",
+  "hello@alessandromarrella.com",
+  url("https://www.alessandromarrella.com/"))
