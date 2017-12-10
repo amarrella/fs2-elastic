@@ -2,7 +2,10 @@
 This library offers an interface to stream results to / from ElasticSearch.
 
 It provides a safe handling of the client and nice lightweight syntax to interact with the ElasticSearch high
-level api. For this reason, the library supports only ElasticSearch 6.0+.
+level api.
+
+## Compatibility
+The library is compatible with `ElasticSearch 6.x`, `fs2 0.10.x` and `scala 2.12.x`
 
 ## Installation
 Add the following to your `build.sbt`:
