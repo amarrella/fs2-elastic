@@ -10,7 +10,7 @@ import scala.concurrent.duration.Duration
 import scala.collection.JavaConverters._
 
 
-trait search {
+private[syntax] trait search {
 
   type SearchResultMaybe[A] = Option[(A, (RestHighLevelClient, SearchScrollRequest, SearchResponse))]
 

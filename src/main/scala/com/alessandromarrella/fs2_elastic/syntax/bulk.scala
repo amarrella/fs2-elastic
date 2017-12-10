@@ -5,7 +5,7 @@ import fs2.Stream
 import org.elasticsearch.action.bulk.{BulkItemResponse, BulkRequest, BulkResponse}
 import org.elasticsearch.client.RestHighLevelClient
 
-trait bulk {
+private[syntax] trait bulk {
   implicit class ElasticClientBulkOps[F[_]](val client:Stream[F, RestHighLevelClient]) {
     def bulk(bulkRequest: BulkRequest): Stream[F, BulkResponse] =
       client.map(_.bulk(bulkRequest))
