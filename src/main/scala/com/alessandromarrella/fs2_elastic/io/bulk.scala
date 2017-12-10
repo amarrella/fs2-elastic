@@ -1,9 +1,7 @@
 package com.alessandromarrella.fs2_elastic.io
 
-import cats.effect.Async
 import fs2.Pipe
 import org.elasticsearch.action.bulk.{
-  BulkItemResponse,
   BulkRequest,
   BulkResponse
 }

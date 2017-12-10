@@ -8,7 +8,7 @@ import org.elasticsearch.action.search.{
   SearchScrollRequest
 }
 import org.elasticsearch.client.RestHighLevelClient
-import org.elasticsearch.search.{SearchHit, SearchHits}
+import org.elasticsearch.search.SearchHits
 import scala.collection.JavaConverters._
 
 import scala.concurrent.duration.Duration
