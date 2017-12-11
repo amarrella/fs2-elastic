@@ -15,7 +15,7 @@ Add the following to your `build.sbt`:
 
 ```
 resolvers += Resolver.sonatypeRepo("snapshots")
-libraryDependencies += "com.alessandromarrella" %% "fs2-elastic" % "0.0.1-SNAPSHOT"
+libraryDependencies += "com.alessandromarrella" %% "fs2-elastic" % "6.0.0-SNAPSHOT"
 ```
 
 ## Usage

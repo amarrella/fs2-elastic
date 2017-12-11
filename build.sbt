@@ -1,7 +1,7 @@
 lazy val globalSettings = Seq(
   organization := "com.alessandromarrella",
   name := "fs2-elastic",
-  version := "0.0.1-SNAPSHOT",
+  version := "6.0.0-SNAPSHOT",
   scalaVersion := "2.12.4",
   useGpg := true
 )
