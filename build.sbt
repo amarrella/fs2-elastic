@@ -1,14 +1,14 @@
 lazy val globalSettings = Seq(
   organization := "com.alessandromarrella",
   name := "fs2-elastic",
-  version := "0.0.1-SNAPSHOT",
+  version := "5.6.0-SNAPSHOT",
   scalaVersion := "2.12.4",
   useGpg := true
 )
 
 
 lazy val fs2Version = "0.10.0-M8"
-lazy val elasticVersion = "6.0.1"
+lazy val elasticVersion = "5.6.5"
 
 lazy val root = (project in file("."))
   .settings(globalSettings)
