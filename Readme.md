@@ -5,10 +5,20 @@ to stream results to / from ElasticSearch.
 It provides a safe handling of the client and nice lightweight syntax to interact with the [ElasticSearch high
 level api](https://www.elastic.co/guide/en/elasticsearch/client/java-rest/6.0/java-rest-high-supported-apis.html).
 
-## Compatibility
-The library is compatible with `ElasticSearch 6.x`, `fs2 0.10.x` and `scala 2.12.x`.
-
 The library can be used in conjuntion with the [elastic4s dsl](https://github.com/sksamuel/elastic4s) to create queries.
+(You need to add elastic4s as a dependency for that).
+
+## Compatibility
+The library is compatible with `fs2 0.10.x` and `scala 2.12.x`.
+
+At the moment, the supports only ElasticSearch 5.6.x and 6.0.x. I plan to support the previous 5.x.x version in the
+near future (feel free to open a PR).
+
+### Versioning
+Versioning is done with the classic MAJOR.MINOR.PATCH.
+You should use the same MAJOR.MINOR version as your ElasticSearch cluster and the latest PATCH version available (patch
+doesn't track ElasticSearch versions).
+The Master branch always tracks the latest version.
 
 ## Installation
 Add the following to your `build.sbt`:
