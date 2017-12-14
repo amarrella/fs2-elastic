@@ -2,31 +2,28 @@ package com.alessandromarrella.fs2_elastic.io
 
 import cats.effect.Async
 import fs2.{Pipe, Stream}
-import org.elasticsearch.action.search.{
-  SearchRequest,
-  SearchResponse,
-  SearchScrollRequest
-}
+import org.apache.http.Header
+import org.elasticsearch.action.search.{SearchRequest, SearchResponse, SearchScrollRequest}
 import org.elasticsearch.client.RestHighLevelClient
 import org.elasticsearch.search.SearchHits
-import scala.collection.JavaConverters._
 
+import scala.collection.JavaConverters._
 import scala.concurrent.duration.Duration
 
 private[io] trait search {
 
   type SearchResultMaybe[A] = Option[(A, SearchResponse)]
 
-  def search[F[_]](searchRequest: SearchRequest)
+  def search[F[_]](searchRequest: SearchRequest, headers: Header*)
     : Pipe[F, RestHighLevelClient, SearchResponse] =
-    client => client.map(_.search(searchRequest))
+    client => client.map(_.search(searchRequest, headers:_*))
 
-  def searchScroll[F[_]](searchRequest: SearchRequest, duration: Duration)(
+  def searchScroll[F[_]](searchRequest: SearchRequest, duration: Duration, headers: Header*)(
       implicit F: Async[F])
     : Pipe[F, RestHighLevelClient, (RestHighLevelClient, SearchResponse)] =
     client =>
       client.map(c =>
-        (c, c.search(searchRequest.scroll(durationToTimeValue(duration)))))
+        (c, c.search(searchRequest.scroll(durationToTimeValue(duration)), headers:_*)))
 
   def hits[F[_]]: Pipe[F, SearchResponse, SearchHits] =
     response => response.map(_.getHits)
