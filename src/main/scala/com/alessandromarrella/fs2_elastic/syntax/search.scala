@@ -2,16 +2,13 @@ package com.alessandromarrella.fs2_elastic.syntax
 
 import cats.effect.Async
 import fs2.Stream
-import org.elasticsearch.action.search.{
-  SearchRequest,
-  SearchResponse,
-  SearchScrollRequest
-}
+import org.elasticsearch.action.search.{SearchRequest, SearchResponse, SearchScrollRequest}
 import org.elasticsearch.client.RestHighLevelClient
 import org.elasticsearch.search.{SearchHit, SearchHits}
 
 import scala.concurrent.duration.Duration
 import com.alessandromarrella.fs2_elastic.io
+import org.apache.http.Header
 
 private[syntax] trait search {
 
@@ -21,13 +18,13 @@ private[syntax] trait search {
   implicit class ElasticClientSearchOps[F[_]](
       val client: Stream[F, RestHighLevelClient]) {
 
-    def search(searchRequest: SearchRequest): Stream[F, SearchResponse] =
+    def search(searchRequest: SearchRequest, headers:Header*): Stream[F, SearchResponse] =
       client.through(io.search.search(searchRequest))
 
-    def searchScroll(searchRequest: SearchRequest, duration: Duration)(
+    def searchScroll(searchRequest: SearchRequest, duration: Duration, headers:Header*)(
         implicit F: Async[F])
       : Stream[F, (RestHighLevelClient, SearchResponse)] =
-      client.through(io.search.searchScroll(searchRequest, duration))
+      client.through(io.search.searchScroll(searchRequest, duration, headers:_*))
   }
 
   implicit class SearchResponseOps[F[_]](
