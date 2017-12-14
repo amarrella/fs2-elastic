@@ -24,11 +24,7 @@ object Client {
 
   def fromHosts[F[_]](hosts: HttpHost*)(
       implicit F: Sync[F]): Stream[F, RestHighLevelClient] =
-    Stream.bracket(
-      F.delay(buildClient(hosts)))(
-      c => Stream.emit(c._1),    // We use the high level client
-      c => F.delay(c._2.close()) // But we need to close the underlying low level client when we are done
-    )
+    fromClientBuilder(RestClient.builder(hosts: _*))
 
   def fromClientBuilder[F[_]](restClientBuilder: RestClientBuilder)(
       implicit F: Sync[F]): Stream[F, RestHighLevelClient] =
