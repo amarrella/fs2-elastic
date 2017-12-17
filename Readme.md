@@ -11,7 +11,7 @@ The library can be used in conjuntion with the [elastic4s dsl](https://github.co
 ## Compatibility
 The library is compatible with `fs2 0.10.x` and `scala 2.12.x`.
 
-At the moment, the supports only ElasticSearch 5.6.x and 6.0.x. I plan to support the previous 5.x.x version in the
+At the moment, the supports only ElasticSearch 5.6.x and 6.x.x. I plan to support the previous 5.x.x version in the
 near future (feel free to open a PR).
 
 ### Versioning

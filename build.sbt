@@ -31,8 +31,6 @@ lazy val fs2Version = "0.10.0-M8"
 lazy val elasticVersion = "5.6.5"
 
 lazy val root = (project in file("."))
-  .enablePlugins(GitVersioning)
-  .settings(Seq(git.useGitDescribe := true))
   .settings(globalSettings)
   .settings(
   libraryDependencies ++= Seq(
