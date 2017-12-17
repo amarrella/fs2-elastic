@@ -28,7 +28,7 @@ lazy val globalSettings = Seq(
 )
 
 lazy val fs2Version = "0.10.0-M8"
-lazy val elasticVersion = "6.0.1"
+lazy val elasticVersion = "6.1.0"
 
 lazy val root = (project in file("."))
   .settings(globalSettings)
