@@ -38,7 +38,3 @@ lazy val root = (project in file("."))
     "org.elasticsearch.client" % "elasticsearch-rest-high-level-client" % elasticVersion
   )
 )
-
-
-
-
