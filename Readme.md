@@ -22,7 +22,7 @@ doesn't track ElasticSearch versions). The Master branch always tracks the lates
 ## Installation
 Add the following to your `build.sbt`:
 
-```
+```scala
 resolvers += Resolver.sonatypeRepo("snapshots")
 libraryDependencies += "com.alessandromarrella" %% "fs2-elastic" % "6.1.0-SNAPSHOT"
 ```
@@ -43,7 +43,7 @@ To import the syntax, use:
 
 ### Creating the client
 
-```
+```scala
 import fs2._
 import org.apache.http.HttpHost
 import com.alessandromarrella.fs2_elastic.Client
@@ -54,7 +54,7 @@ val client = Client.fromHosts[IO](new HttpHost("localhost", 9200))
 ```
 
 ### Using the pipes
-```
+```scala
 import fs2._
 import com.alessandromarrella.fs2_elastic.io.all._
 import org.elasticsearch.action.index.IndexRequest
@@ -67,7 +67,7 @@ val indexResponse = client through index(request)
 ```
 
 ### Using the syntax
-```
+```scala
 import fs2._
 import com.alessandromarrella.fs2_elastic.syntax.all._
 import org.elasticsearch.action.index.IndexRequest
