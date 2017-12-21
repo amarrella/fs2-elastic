@@ -25,7 +25,7 @@ Add the following to your `build.sbt`:
 
 ```scala
 resolvers += Resolver.sonatypeRepo("snapshots")
-libraryDependencies += "com.alessandromarrella" %% "fs2-elastic" % "6.0.0-SNAPSHOT"
+libraryDependencies += "com.alessandromarrella" %% "fs2-elastic" % fs2ElasticVersion
 ```
 
 ## Usage
