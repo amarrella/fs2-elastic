@@ -1,4 +1,6 @@
 # fs2-elastic
+[![Latest version](https://index.scala-lang.org/amarrella/fs2-elastic/latest.svg)](https://index.scala-lang.org/amarrella/fs2-elastic)
+
 This library offers an interface based on [fs2](https://github.com/functional-streams-for-scala/fs2)
 to stream results to / from ElasticSearch.
 
@@ -11,14 +13,13 @@ The library can be used in conjuntion with the [elastic4s dsl](https://github.co
 ## Compatibility
 The library is compatible with `fs2 0.10.x` and `scala 2.12.x`.
 
-At the moment, the supports only ElasticSearch 5.6.x and 6.x.x. I plan to support the previous 5.x.x version in the
+At the moment, the library supports only ElasticSearch 5.6.x and 6.x.x. I plan to support the previous 5.x.x version in the
 near future (feel free to open a PR).
 
 ### Versioning
 Versioning is done with the classic MAJOR.MINOR.PATCH.
 You should use the same MAJOR.MINOR version as your ElasticSearch cluster and the latest PATCH version available (patch
-doesn't track ElasticSearch versions).
-The Master branch always tracks the latest version.
+doesn't track ElasticSearch versions). The Master branch always tracks the latest version (currently `6.1`).
 
 ## Installation
 Add the following to your `build.sbt`:
