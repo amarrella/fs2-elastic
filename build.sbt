@@ -4,7 +4,6 @@ lazy val globalSettings = Seq(
   organization := "com.alessandromarrella",
   name := "fs2-elastic",
   scalaVersion := "2.12.4",
-  useGpg := true,
   publishTo := {
     val nexus = "https://oss.sonatype.org/"
     if (isSnapshot.value)
