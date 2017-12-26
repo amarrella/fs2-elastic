@@ -1,4 +1,7 @@
 # fs2-elastic
+
+[![Latest version](https://index.scala-lang.org/amarrella/fs2-elastic/latest.svg)](https://index.scala-lang.org/amarrella/fs2-elastic)
+
 This library offers an interface based on [fs2](https://github.com/functional-streams-for-scala/fs2)
 to stream results to / from ElasticSearch.
 
@@ -23,8 +26,7 @@ doesn't track ElasticSearch versions). The Master branch always tracks the lates
 Add the following to your `build.sbt`:
 
 ```scala
-resolvers += Resolver.sonatypeRepo("snapshots")
-libraryDependencies += "com.alessandromarrella" %% "fs2-elastic" % "6.1.0-SNAPSHOT"
+libraryDependencies += "com.alessandromarrella" %% "fs2-elastic" % "fs2ElasticVersion"
 ```
 
 ## Usage
