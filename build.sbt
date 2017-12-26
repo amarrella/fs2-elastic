@@ -26,14 +26,14 @@ lazy val globalSettings = Seq(
     url("https://www.alessandromarrella.com/"))
 )
 
-lazy val fs2Version = "0.10.0-M8"
+lazy val fs2Version = "0.10.0-M10"
 lazy val elasticVersion = "5.6.5"
 
 lazy val root = (project in file("."))
   .settings(globalSettings)
   .settings(
   libraryDependencies ++= Seq(
-    "co.fs2" %% "fs2-io" % fs2Version,
+    "co.fs2" %% "fs2-core" % fs2Version,
     "org.elasticsearch.client" % "elasticsearch-rest-high-level-client" % elasticVersion
   )
 )
