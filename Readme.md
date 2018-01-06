@@ -1,4 +1,5 @@
 # fs2-elastic
+
 [![Latest version](https://index.scala-lang.org/amarrella/fs2-elastic/latest.svg)](https://index.scala-lang.org/amarrella/fs2-elastic)
 
 This library offers an interface based on [fs2](https://github.com/functional-streams-for-scala/fs2)
