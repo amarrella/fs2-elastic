@@ -26,7 +26,7 @@ lazy val globalSettings = Seq(
     url("https://www.alessandromarrella.com/"))
 )
 
-lazy val fs2Version = "0.10.0-M11"
+lazy val fs2Version = "0.10.0"
 lazy val elasticVersion = "5.6.5"
 
 lazy val root = (project in file("."))
