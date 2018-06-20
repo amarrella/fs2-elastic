@@ -3,7 +3,7 @@ import sbt.Keys.licenses
 lazy val globalSettings = Seq(
   organization := "com.alessandromarrella",
   name := "fs2-elastic",
-  scalaVersion := "2.12.4",
+  scalaVersion := "2.12.6",
   publishTo := {
     val nexus = "https://oss.sonatype.org/"
     if (isSnapshot.value)
@@ -26,7 +26,7 @@ lazy val globalSettings = Seq(
     url("https://www.alessandromarrella.com/"))
 )
 
-lazy val fs2Version = "0.10.1"
+lazy val fs2Version = "0.10.4"
 lazy val elasticVersion = "6.0.1"
 
 lazy val root = (project in file("."))
