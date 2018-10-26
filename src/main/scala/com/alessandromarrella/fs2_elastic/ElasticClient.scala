@@ -4,24 +4,21 @@ import org.elasticsearch.client.{
   RestClientBuilder,
   RestHighLevelClient
 }
-import fs2._
-import cats.effect.Sync
+import cats.effect.{Sync, Resource}
 import org.apache.http.HttpHost
 
 object Client {
 
   def fromHosts[F[_]](hosts: HttpHost*)(
-      implicit F: Sync[F]): Stream[F, RestHighLevelClient] =
-    Stream.bracket(
+      implicit F: Sync[F]): Resource[F, RestHighLevelClient] =
+    Resource.make(
       F.delay(new RestHighLevelClient(RestClient.builder(hosts: _*))))(
-      c => Stream.emit(c),
       c => F.delay(c.close())
     )
 
   def fromClientBuilder[F[_]](restClientBuilder: RestClientBuilder)(
-      implicit F: Sync[F]): Stream[F, RestHighLevelClient] =
-    Stream.bracket(F.delay(new RestHighLevelClient(restClientBuilder)))(
-      c => Stream.emit(c),
+      implicit F: Sync[F]): Resource[F, RestHighLevelClient] =
+    Resource.make(F.delay(new RestHighLevelClient(restClientBuilder)))(
       c => F.delay(c.close())
     )
 
