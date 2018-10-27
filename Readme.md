@@ -12,21 +12,21 @@ The library can be used in conjuntion with the [elastic4s dsl](https://github.co
 (You need to add elastic4s as a dependency for that).
 
 ## Compatibility
-The library is compatible with `fs2 0.10.x` and `scala 2.12.x`.
+The library is compatible with `fs2 1.0.x` and `scala 2.12.x`.
 
 At the moment, the library supports only ElasticSearch 5.6.x and 6.x.x. I plan to support the previous 5.x.x version in the
 near future (feel free to open a PR).
 
 ### Versioning
-Versioning is done with the classic MAJOR.MINOR.PATCH.
-You should use the same MAJOR.MINOR version as your ElasticSearch cluster and the latest PATCH version available (patch
-doesn't track ElasticSearch versions). The Master branch always tracks the latest version (currently `6.1`).
+Versioning is done with the classic ES_MAJOR.ES_MINOR.LIBRARY_VERSION
+You should use the same ES_MAJOR.ES_MINOR version as your ElasticSearch cluster and the latest LIBRARY_VERSION version available (this
+doesn't track ElasticSearch patch versions and could contain breaking changes. In case of non-breaking changes we might append a .PATCH). The Master branch always tracks the latest version.
 
 ## Installation
 Add the following to your `build.sbt`:
 
 ```scala
-libraryDependencies += "com.alessandromarrella" %% "fs2-elastic" % fs2ElasticVersion
+libraryDependencies += "com.alessandromarrella" %% "fs2-elastic" % "fs2ElasticVersion"
 ```
 
 ## Usage
