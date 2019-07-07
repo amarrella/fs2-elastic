@@ -1,13 +1,9 @@
 import sbt.Keys.licenses
 
-val supportedScalaVersions = Seq(
-  "2.12.8",
-  "2.13.0"
-)
 lazy val globalSettings = Seq(
   organization := "com.alessandromarrella",
   name := "fs2-elastic",
-  scalaVersion := "2.12.8",
+  scalaVersion := "2.12.7",
   publishTo := {
     val nexus = "https://oss.sonatype.org/"
     if (isSnapshot.value)
@@ -21,7 +17,6 @@ lazy val globalSettings = Seq(
       "scm:git@github.com:amarrella/fs2-elastic.git"
     )
   ),
-  crossScalaVersions := supportedScalaVersions,
   homepage := Some(url("https://github.com/amarrella/fs2-elastic")),
   licenses += "MIT" -> url(
   "https://github.com/amarrella/fs2-mongodb/blob/master/LICENSE"),
@@ -31,7 +26,7 @@ lazy val globalSettings = Seq(
     url("https://www.alessandromarrella.com/"))
 )
 
-lazy val fs2Version = "1.1.0-M1"
+lazy val fs2Version = "1.0.0"
 lazy val elasticVersion = "6.4.2"
 
 lazy val root = (project in file("."))
