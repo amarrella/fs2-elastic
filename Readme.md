@@ -2,6 +2,9 @@
 
 [![Latest version](https://index.scala-lang.org/amarrella/fs2-elastic/latest.svg)](https://index.scala-lang.org/amarrella/fs2-elastic)
 
+# Looking for Maintainer
+I'm not using ElasticSearch any longer and I no longer have time to maintain this repository. I'm looking for a reliable maintainer to transfer ownership to. 
+
 This library offers an interface based on [fs2](https://github.com/functional-streams-for-scala/fs2)
 to stream results to / from ElasticSearch.
 
